@@ -1,0 +1,6 @@
+{
+    group = "Screenshot+";
+    title = "Screenshot+ Activation";
+    description = "This activator action will invoke Screenshot+.";
+    "compatible-modes" = ("springboard", "lockscreen", "application");
+}

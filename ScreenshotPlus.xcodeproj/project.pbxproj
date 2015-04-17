@@ -1,0 +1,418 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		242B44191AE180C900774422 /* libactivator.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 242B44181AE180C900774422 /* libactivator.dylib */; };
+		242B441C1AE1816500774422 /* ScreenshotPlusManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 242B441A1AE1816500774422 /* ScreenshotPlusManager.h */; };
+		242B441D1AE1816500774422 /* ScreenshotPlusManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 242B441B1AE1816500774422 /* ScreenshotPlusManager.m */; };
+		2472997E1AE17FD0007F2BC1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2472997D1AE17FD0007F2BC1 /* Foundation.framework */; };
+		2472998F1AE17FD0007F2BC1 /* ScreenshotPlus.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2472998E1AE17FD0007F2BC1 /* ScreenshotPlus.mm */; };
+		247299991AE17FDE007F2BC1 /* libsubstrate.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 247299981AE17FDE007F2BC1 /* libsubstrate.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		242B44171AE180AA00774422 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		242B44181AE180C900774422 /* libactivator.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libactivator.dylib; path = ../../../../../opt/iOSOpenDev/lib/libactivator.dylib; sourceTree = "<group>"; };
+		242B441A1AE1816500774422 /* ScreenshotPlusManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenshotPlusManager.h; sourceTree = "<group>"; };
+		242B441B1AE1816500774422 /* ScreenshotPlusManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenshotPlusManager.m; sourceTree = "<group>"; };
+		2472997A1AE17FD0007F2BC1 /* ScreenshotPlus.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ScreenshotPlus.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		2472997D1AE17FD0007F2BC1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		247299821AE17FD0007F2BC1 /* control.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = control.txt; path = Package/DEBIAN/control.txt; sourceTree = "<group>"; };
+		247299831AE17FD0007F2BC1 /* control */ = {isa = PBXFileReference; lastKnownFileType = text; name = control; path = Package/DEBIAN/control; sourceTree = "<group>"; };
+		247299851AE17FD0007F2BC1 /* PackageVersion.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PackageVersion.plist; sourceTree = "<group>"; };
+		247299891AE17FD0007F2BC1 /* ScreenshotPlus.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ScreenshotPlus.plist; path = Package/Library/PreferenceLoader/Preferences/ScreenshotPlus.plist; sourceTree = "<group>"; };
+		2472998A1AE17FD0007F2BC1 /* ScreenshotPlusIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ScreenshotPlusIcon.png; path = Package/Library/PreferenceLoader/Preferences/ScreenshotPlusIcon.png; sourceTree = "<group>"; };
+		2472998B1AE17FD0007F2BC1 /* ScreenshotPlusIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ScreenshotPlusIcon@2x.png"; path = "Package/Library/PreferenceLoader/Preferences/ScreenshotPlusIcon@2x.png"; sourceTree = "<group>"; };
+		2472998C1AE17FD0007F2BC1 /* ScreenshotPlus-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScreenshotPlus-Prefix.pch"; sourceTree = "<group>"; };
+		2472998D1AE17FD0007F2BC1 /* ScreenshotPlus.xm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ScreenshotPlus.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		2472998E1AE17FD0007F2BC1 /* ScreenshotPlus.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ScreenshotPlus.mm; sourceTree = "<group>"; };
+		247299921AE17FD0007F2BC1 /* ScreenshotPlus.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ScreenshotPlus.plist; path = Package/Library/MobileSubstrate/DynamicLibraries/ScreenshotPlus.plist; sourceTree = "<group>"; };
+		247299981AE17FDE007F2BC1 /* libsubstrate.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsubstrate.dylib; path = ../../../../../opt/iOSOpenDev/lib/libsubstrate.dylib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		247299761AE17FD0007F2BC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				242B44191AE180C900774422 /* libactivator.dylib in Frameworks */,
+				247299991AE17FDE007F2BC1 /* libsubstrate.dylib in Frameworks */,
+				2472997E1AE17FD0007F2BC1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		242B44141AE180AA00774422 /* Activator */ = {
+			isa = PBXGroup;
+			children = (
+				242B44151AE180AA00774422 /* Listeners */,
+			);
+			name = Activator;
+			path = Package/Library/Activator;
+			sourceTree = "<group>";
+		};
+		242B44151AE180AA00774422 /* Listeners */ = {
+			isa = PBXGroup;
+			children = (
+				242B44161AE180AA00774422 /* wales.tucker.ScreenshotPlus */,
+			);
+			path = Listeners;
+			sourceTree = "<group>";
+		};
+		242B44161AE180AA00774422 /* wales.tucker.ScreenshotPlus */ = {
+			isa = PBXGroup;
+			children = (
+				242B44171AE180AA00774422 /* Info.plist */,
+			);
+			path = wales.tucker.ScreenshotPlus;
+			sourceTree = "<group>";
+		};
+		2472996F1AE17FD0007F2BC1 = {
+			isa = PBXGroup;
+			children = (
+				2472997F1AE17FD0007F2BC1 /* ScreenshotPlus */,
+				2472997C1AE17FD0007F2BC1 /* Frameworks */,
+				2472997B1AE17FD0007F2BC1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2472997B1AE17FD0007F2BC1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2472997A1AE17FD0007F2BC1 /* ScreenshotPlus.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2472997C1AE17FD0007F2BC1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				242B44181AE180C900774422 /* libactivator.dylib */,
+				247299981AE17FDE007F2BC1 /* libsubstrate.dylib */,
+				2472997D1AE17FD0007F2BC1 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2472997F1AE17FD0007F2BC1 /* ScreenshotPlus */ = {
+			isa = PBXGroup;
+			children = (
+				242B441A1AE1816500774422 /* ScreenshotPlusManager.h */,
+				242B441B1AE1816500774422 /* ScreenshotPlusManager.m */,
+				2472998D1AE17FD0007F2BC1 /* ScreenshotPlus.xm */,
+				2472998E1AE17FD0007F2BC1 /* ScreenshotPlus.mm */,
+				247299801AE17FD0007F2BC1 /* Package */,
+				247299841AE17FD0007F2BC1 /* Supporting Files */,
+			);
+			path = ScreenshotPlus;
+			sourceTree = "<group>";
+		};
+		247299801AE17FD0007F2BC1 /* Package */ = {
+			isa = PBXGroup;
+			children = (
+				247299811AE17FD0007F2BC1 /* DEBIAN */,
+				247299861AE17FD0007F2BC1 /* Library */,
+			);
+			name = Package;
+			sourceTree = "<group>";
+		};
+		247299811AE17FD0007F2BC1 /* DEBIAN */ = {
+			isa = PBXGroup;
+			children = (
+				247299821AE17FD0007F2BC1 /* control.txt */,
+				247299831AE17FD0007F2BC1 /* control */,
+			);
+			name = DEBIAN;
+			sourceTree = "<group>";
+		};
+		247299841AE17FD0007F2BC1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				247299851AE17FD0007F2BC1 /* PackageVersion.plist */,
+				2472998C1AE17FD0007F2BC1 /* ScreenshotPlus-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		247299861AE17FD0007F2BC1 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				242B44141AE180AA00774422 /* Activator */,
+				247299871AE17FD0007F2BC1 /* PreferenceLoader */,
+				247299901AE17FD0007F2BC1 /* MobileSubstrate */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		247299871AE17FD0007F2BC1 /* PreferenceLoader */ = {
+			isa = PBXGroup;
+			children = (
+				247299881AE17FD0007F2BC1 /* Preferences */,
+			);
+			name = PreferenceLoader;
+			sourceTree = "<group>";
+		};
+		247299881AE17FD0007F2BC1 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				247299891AE17FD0007F2BC1 /* ScreenshotPlus.plist */,
+				2472998A1AE17FD0007F2BC1 /* ScreenshotPlusIcon.png */,
+				2472998B1AE17FD0007F2BC1 /* ScreenshotPlusIcon@2x.png */,
+			);
+			name = Preferences;
+			sourceTree = "<group>";
+		};
+		247299901AE17FD0007F2BC1 /* MobileSubstrate */ = {
+			isa = PBXGroup;
+			children = (
+				247299911AE17FD0007F2BC1 /* DynamicLibraries */,
+			);
+			name = MobileSubstrate;
+			sourceTree = "<group>";
+		};
+		247299911AE17FD0007F2BC1 /* DynamicLibraries */ = {
+			isa = PBXGroup;
+			children = (
+				247299921AE17FD0007F2BC1 /* ScreenshotPlus.plist */,
+			);
+			name = DynamicLibraries;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		247299771AE17FD0007F2BC1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				242B441C1AE1816500774422 /* ScreenshotPlusManager.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		247299791AE17FD0007F2BC1 /* ScreenshotPlus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 247299951AE17FD0007F2BC1 /* Build configuration list for PBXNativeTarget "ScreenshotPlus" */;
+			buildPhases = (
+				247299741AE17FD0007F2BC1 /* ShellScript */,
+				247299751AE17FD0007F2BC1 /* Sources */,
+				247299761AE17FD0007F2BC1 /* Frameworks */,
+				247299771AE17FD0007F2BC1 /* Headers */,
+				247299781AE17FD0007F2BC1 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScreenshotPlus;
+			productName = ScreenshotPlus;
+			productReference = 2472997A1AE17FD0007F2BC1 /* ScreenshotPlus.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		247299701AE17FD0007F2BC1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				TargetAttributes = {
+					247299791AE17FD0007F2BC1 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+				};
+			};
+			buildConfigurationList = 247299731AE17FD0007F2BC1 /* Build configuration list for PBXProject "ScreenshotPlus" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2472996F1AE17FD0007F2BC1;
+			productRefGroup = 2472997B1AE17FD0007F2BC1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				247299791AE17FD0007F2BC1 /* ScreenshotPlus */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		247299741AE17FD0007F2BC1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/iOSOpenDev/bin/iosod --xcbp-logos";
+		};
+		247299781AE17FD0007F2BC1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/iOSOpenDev/bin/iosod --xcbp";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		247299751AE17FD0007F2BC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2472998F1AE17FD0007F2BC1 /* ScreenshotPlus.mm in Sources */,
+				242B441D1AE1816500774422 /* ScreenshotPlusManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		247299931AE17FD0007F2BC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(iOSOpenDevPath)/frameworks/**",
+					"$(SDKROOT)/System/Library/PrivateFrameworks",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(iOSOpenDevPath)/include/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LIBRARY_SEARCH_PATHS = "$(iOSOpenDevPath)/lib/**";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = NO;
+				iOSOpenDevPath = /opt/iOSOpenDev;
+			};
+			name = Debug;
+		};
+		247299941AE17FD0007F2BC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(iOSOpenDevPath)/frameworks/**",
+					"$(SDKROOT)/System/Library/PrivateFrameworks",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(iOSOpenDevPath)/include/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LIBRARY_SEARCH_PATHS = "$(iOSOpenDevPath)/lib/**";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				iOSOpenDevPath = /opt/iOSOpenDev;
+			};
+			name = Release;
+		};
+		247299961AE17FD0007F2BC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ScreenshotPlus/ScreenshotPlus-Prefix.pch";
+				INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/iOSOpenDev/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				iOSOpenDevBuildPackageOnAnyBuild = NO;
+				iOSOpenDevCopyOnBuild = NO;
+				iOSOpenDevDevice = "";
+				iOSOpenDevInstallOnAnyBuild = NO;
+				iOSOpenDevInstallOnProfiling = YES;
+				iOSOpenDevRespringOnInstall = YES;
+				iOSOpenDevUsePackageVersionPList = YES;
+			};
+			name = Debug;
+		};
+		247299971AE17FD0007F2BC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ScreenshotPlus/ScreenshotPlus-Prefix.pch";
+				INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/iOSOpenDev/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				iOSOpenDevBuildPackageOnAnyBuild = NO;
+				iOSOpenDevCopyOnBuild = NO;
+				iOSOpenDevDevice = "";
+				iOSOpenDevInstallOnAnyBuild = NO;
+				iOSOpenDevInstallOnProfiling = YES;
+				iOSOpenDevRespringOnInstall = YES;
+				iOSOpenDevUsePackageVersionPList = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		247299731AE17FD0007F2BC1 /* Build configuration list for PBXProject "ScreenshotPlus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				247299931AE17FD0007F2BC1 /* Debug */,
+				247299941AE17FD0007F2BC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		247299951AE17FD0007F2BC1 /* Build configuration list for PBXNativeTarget "ScreenshotPlus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				247299961AE17FD0007F2BC1 /* Debug */,
+				247299971AE17FD0007F2BC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 247299701AE17FD0007F2BC1 /* Project object */;
+}
