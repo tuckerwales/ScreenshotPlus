@@ -1,9 +1,9 @@
 Package: wales.tucker.ScreenshotPlus
 Name: ScreenshotPlus
 Version: 1.0-1
-Description: 
-Section: System
-Depends: firmware (>= 5.0), mobilesubstrate
+Description: Screenshot+ makes it easy for you to share your screenshots with friends; choose to share your screenshots through Twitter, Facebook, Email or iMessage/MMS.
+Section: Tweaks
+Depends: firmware (>= 8.0), mobilesubstrate, libactivator
 Conflicts: 
 Replaces: 
 Priority: optional
@@ -12,6 +12,6 @@ Author: Joshua Lee Tucker
 dev: 
 Homepage: 
 Depiction: 
-Maintainer: 
+Maintainer: Joshua Lee Tucker (DarkMalloc) <josh@tucker.wales>
 Icon: 
 

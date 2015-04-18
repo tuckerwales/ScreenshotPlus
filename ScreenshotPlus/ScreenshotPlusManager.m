@@ -10,33 +10,36 @@
 
 #import "Screenshotter.h"
 
-#define BundlePath @"/Library/MobileSubstrate/DynamicLibraries/ScreenshotPlus.bundle"
-
+#define kBundlePath @"/Library/MobileSubstrate/DynamicLibraries/ScreenshotPlus.bundle"
+#define kSettingsPath @"/var/mobile/Library/Preferences/wales.tucker.ScreenshotPlus.plist"
 
 @implementation ScreenshotPlusManager
 
 @synthesize window, composeWindow, isRunning;
 
-- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+- (void)loadPrefs {
     
-    [mailComposeVC dismissViewControllerAnimated:YES completion:^{
-        [composeWindow setHidden:YES];
-        self.window.windowLevel = INT_MAX;
-        composeWindow = nil;
-        composeVC = nil;
-    }];
+    NSDictionary *settings = [[NSDictionary alloc] initWithContentsOfFile:kSettingsPath];
+    
+    email = YES;
+    mms = YES;
+    twitter = YES;
+    facebook = YES;
+    
+    saveToPhotos = YES;
+    
+    email = [[settings valueForKey:@"EmailSwitch"] boolValue];
+    mms = [[settings valueForKey:@"MMSSwitch"] boolValue];
+    twitter = [[settings valueForKey:@"TwitterSwitch"] boolValue];
+    facebook = [[settings valueForKey:@"FacebookSwitch"] boolValue];
+    
+    saveToPhotos = [[settings valueForKey:@"SaveScreenshot"] boolValue];
     
 }
 
-- (void)setupComposers {
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result {
     
-    mailComposeVC = [[MFMailComposeViewController alloc] init];
-    mailComposeVC.mailComposeDelegate = self;
-    
-    socialComposer = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-    [socialComposer setInitialText:@"Testing from Screenshot+!"];
-    [socialComposer addImage:screenshotView.image];
-    [socialComposer setCompletionHandler:^(SLComposeViewControllerResult result) {
+    [messageComposeVC dismissViewControllerAnimated:YES completion:^{
        
         [composeWindow setHidden:YES];
         self.window.windowLevel = INT_MAX;
@@ -44,7 +47,107 @@
         composeVC = nil;
         
     }];
+    
+}
 
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    
+    [mailComposeVC dismissViewControllerAnimated:YES completion:^{
+        
+        [composeWindow setHidden:YES];
+        self.window.windowLevel = INT_MAX;
+        composeWindow = nil;
+        composeVC = nil;
+        
+    }];
+    
+}
+
+- (void)setupComposers {
+    
+    composers = [[NSMutableArray alloc] init];
+    
+    if ([MFMailComposeViewController canSendMail] && email == YES) {
+        mailComposeVC = [[MFMailComposeViewController alloc] init];
+        mailComposeVC.mailComposeDelegate = self;
+        [mailComposeVC addAttachmentData:UIImagePNGRepresentation(screenshot) mimeType:@"image/png" fileName:@"image.png"];
+        [composers addObject:mailComposeVC];
+    }
+    
+    if ([MFMessageComposeViewController canSendAttachments] && mms == YES) {
+        messageComposeVC = [[MFMessageComposeViewController alloc] init];
+        messageComposeVC.messageComposeDelegate = self;
+        [messageComposeVC addAttachmentData:UIImagePNGRepresentation(screenshot) typeIdentifier:@"kUTTypePNG" filename:@"image.png"];
+        [composers addObject:messageComposeVC];
+    }
+    
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter] && twitter == YES) {
+        twitterComposer = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        [twitterComposer setInitialText:@""];
+        [twitterComposer addImage:screenshot];
+        [twitterComposer setCompletionHandler:^(SLComposeViewControllerResult result) {
+            
+            [composeWindow setHidden:YES];
+            self.window.windowLevel = INT_MAX;
+            composeWindow = nil;
+            composeVC = nil;
+            
+        }];
+        [composers addObject:twitterComposer];
+    }
+    
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook] && facebook == YES) {
+        facebookComposer = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        [facebookComposer setInitialText:@""];
+        [facebookComposer addImage:screenshot];
+        [facebookComposer setCompletionHandler:^(SLComposeViewControllerResult result) {
+            
+            [composeWindow setHidden:YES];
+            self.window.windowLevel = INT_MAX;
+            composeWindow = nil;
+            composeVC = nil;
+            
+        }];
+        [composers addObject:facebookComposer];
+    }
+
+}
+
+- (void)addButtons {
+    
+    [self setupComposers];
+    
+    NSLog(@"Composers: %@", composers);
+    
+    for (id item in composers) {
+        
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.backgroundColor = [UIColor clearColor];
+        button.frame = CGRectMake(0, 0, 60.0, 60.0);
+        button.layer.cornerRadius = button.frame.size.width / 2.0f;
+        button.layer.borderColor = [UIColor whiteColor].CGColor;
+        button.layer.borderWidth = 2.0f;
+        button.layer.masksToBounds = YES;
+        
+        if (item == twitterComposer) {
+            [button setImage:[UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/twitter.png", kBundlePath]] forState:UIControlStateNormal];
+        } else if (item == facebookComposer) {
+            [button setImage:[UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/facebook.png", kBundlePath]] forState:UIControlStateNormal];
+        } else if (item == mailComposeVC) {
+            [button setImage:[UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/email.png", kBundlePath]] forState:UIControlStateNormal];
+        } else if (item == messageComposeVC) {
+            [button setImage:[UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/sms.png", kBundlePath]] forState:UIControlStateNormal];
+        }
+        
+        button.contentMode = UIViewContentModeCenter;
+        button.center = CGPointMake((self.window.frame.size.width / ([composers count] + 1)) * ([composers indexOfObject:item] + 1), self.window.frame.size.height * 0.11);
+        button.alpha = 0.0f;
+        [button addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
+        [self.window addSubview:button];
+        [buttons addObject:button];
+        
+    }
+    
 }
 
 - (void)setupWindow {
@@ -56,68 +159,11 @@
     self.window.alpha = 0.9;
     [self.window makeKeyAndVisible];
     
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.backgroundColor = [UIColor clearColor];
-    button.frame = CGRectMake(75.0, 50, 60.0, 60.0);
-    button.layer.cornerRadius = button.frame.size.width / 2.0;
-    button.layer.borderColor = [UIColor whiteColor].CGColor;
-    button.layer.borderWidth = 2.0f;
-    button.layer.masksToBounds = YES;
-    [button setImage:[UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/twitter.png", BundlePath]] forState:UIControlStateNormal];
-    [button setContentMode:UIViewContentModeCenter];
-    button.center = CGPointMake((self.window.frame.size.width / 5), self.window.frame.size.height * 0.11);
-    button.alpha = 0.0f;
-    [button addTarget:self action:@selector(buttonPressed) forControlEvents:UIControlEventTouchUpInside];
-    [self.window addSubview:button];
-    [buttons addObject:button];
-    
-    UIButton *fbutton = [UIButton buttonWithType:UIButtonTypeCustom];
-    fbutton.backgroundColor = [UIColor clearColor];
-    fbutton.frame = CGRectMake(75.0, 50, 60.0, 60.0);
-    fbutton.layer.cornerRadius = button.frame.size.width / 2.0;
-    fbutton.layer.borderColor = [UIColor whiteColor].CGColor;
-    fbutton.layer.borderWidth = 2.0f;
-    fbutton.layer.masksToBounds = YES;
-    [fbutton setImage:[UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/facebook.png", BundlePath]] forState:UIControlStateNormal];
-    [fbutton setContentMode:UIViewContentModeCenter];
-    fbutton.center = CGPointMake((self.window.frame.size.width / 5) * 2, self.window.frame.size.height * 0.11);
-    fbutton.alpha = 0.0f;
-    [self.window addSubview:fbutton];
-    [buttons addObject:fbutton];
-    
-    UIButton *sbutton = [UIButton buttonWithType:UIButtonTypeCustom];
-    sbutton.backgroundColor = [UIColor clearColor];
-    sbutton.frame = CGRectMake(75.0, 50, 60.0, 60.0);
-    sbutton.layer.cornerRadius = button.frame.size.width / 2.0;
-    sbutton.layer.borderColor = [UIColor whiteColor].CGColor;
-    sbutton.layer.borderWidth = 2.0f;
-    sbutton.layer.masksToBounds = YES;
-    [sbutton setImage:[UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/sms.png", BundlePath]] forState:UIControlStateNormal];
-    [sbutton setContentMode:UIViewContentModeCenter];
-    sbutton.center = CGPointMake((self.window.frame.size.width / 5) * 3, self.window.frame.size.height * 0.11);
-    sbutton.alpha = 0.0f;
-    [self.window addSubview:sbutton];
-    [buttons addObject:sbutton];
-    
-    UIButton *mbutton = [UIButton buttonWithType:UIButtonTypeCustom];
-    mbutton.backgroundColor = [UIColor clearColor];
-    mbutton.frame = CGRectMake(75.0, 50, 60.0, 60.0);
-    mbutton.layer.cornerRadius = button.frame.size.width / 2.0;
-    mbutton.layer.borderColor = [UIColor whiteColor].CGColor;
-    mbutton.layer.borderWidth = 2.0f;
-    mbutton.layer.masksToBounds = YES;
-    [mbutton setImage:[UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/email.png", BundlePath]] forState:UIControlStateNormal];
-    [mbutton setContentMode:UIViewContentModeCenter];
-    mbutton.center = CGPointMake((self.window.frame.size.width / 5) * 4, self.window.frame.size.height * 0.11);
-    mbutton.alpha = 0.0f;
-    [self.window addSubview:mbutton];
-    [buttons addObject:mbutton];
+    [self addButtons];
     
 }
 
-- (void)buttonPressed {
-    
-    [self setupComposers];
+- (void)buttonPressed:(id)sender {
     
     composeWindow = [[UIWindow alloc] initWithFrame:self.window.frame];
     composeWindow.windowLevel = UIWindowLevelAlert;
@@ -128,23 +174,28 @@
     composeVC.view = mailView;
     
     [composeWindow addSubview:composeVC.view];
-    self.window.windowLevel = UIWindowLevelNormal;
+    self.window.windowLevel = UIWindowLevelStatusBar;
     
     [composeWindow makeKeyAndVisible];
     
-    //[composeVC presentViewController:mailComposeVC animated:YES completion:nil];
-    [composeVC presentViewController:socialComposer animated:YES completion:nil];
+    id composeController = [composers objectAtIndex:[buttons indexOfObject:sender]];
+    
+    [composeVC presentViewController:composeController animated:YES completion:nil];
     
 }
 
 - (void)invoke {
     
+    [self loadPrefs];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resign) name:@"ScreenshotPlusResign" object:nil];
     
     CGImageRef cgImage = [[Screenshotter sharedScreenshotter] getScreenshot];
-    UIImage *screenshot = [UIImage imageWithCGImage:cgImage];
+    screenshot = [UIImage imageWithCGImage:cgImage];
     
-    UIImageWriteToSavedPhotosAlbum(screenshot, nil, nil, nil);
+    if (saveToPhotos) {
+        UIImageWriteToSavedPhotosAlbum(screenshot, nil, nil, nil);
+    }
     
     NSLog(@"Screenshot+: Successfully took screenshot.");
     

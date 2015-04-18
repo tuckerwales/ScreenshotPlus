@@ -44,12 +44,23 @@ static void _logos_method$_ungrouped$SpringBoard$lockButtonWasHeld(SpringBoard* 
 
 
 
-static __attribute__((constructor)) void _logosLocalCtor_60a62657() {
+static void lockComplete(CFNotificationCenterRef center, void *observer, CFStringRef name, const void *object, CFDictionaryRef userInfo) {
+    
+    if ([screenshotPlusManager isRunning]) {
+        [screenshotPlusManager resign];
+    }
+    
+}
+
+static __attribute__((constructor)) void _logosLocalCtor_44056092() {
     NSLog(@"Screenshot+: Starting up!");
     screenshotPlusManager = [[ScreenshotPlusManager alloc] init];
     screenshotPlusManager.isRunning = NO;
     [LASharedActivator registerListener:screenshotPlusManager forName:@"wales.tucker.ScreenshotPlus"];
+    
+    CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, lockComplete, CFSTR("com.apple.springboard.lockcomplete"), NULL, CFNotificationSuspensionBehaviorDeliverImmediately);
+    
 }
 static __attribute__((constructor)) void _logosLocalInit() {
 {Class _logos_class$_ungrouped$SpringBoard = objc_getClass("SpringBoard"); MSHookMessageEx(_logos_class$_ungrouped$SpringBoard, @selector(_handleMenuButtonEvent), (IMP)&_logos_method$_ungrouped$SpringBoard$_handleMenuButtonEvent, (IMP*)&_logos_orig$_ungrouped$SpringBoard$_handleMenuButtonEvent);MSHookMessageEx(_logos_class$_ungrouped$SpringBoard, @selector(handleMenuDoubleTap), (IMP)&_logos_method$_ungrouped$SpringBoard$handleMenuDoubleTap, (IMP*)&_logos_orig$_ungrouped$SpringBoard$handleMenuDoubleTap);MSHookMessageEx(_logos_class$_ungrouped$SpringBoard, @selector(lockButtonWasHeld), (IMP)&_logos_method$_ungrouped$SpringBoard$lockButtonWasHeld, (IMP*)&_logos_orig$_ungrouped$SpringBoard$lockButtonWasHeld);} }
-#line 46 "/Users/jlt/Desktop/Projects/ScreenshotPlus/ScreenshotPlus/ScreenshotPlus.xm"
+#line 57 "/Users/jlt/Desktop/Projects/ScreenshotPlus/ScreenshotPlus/ScreenshotPlus.xm"

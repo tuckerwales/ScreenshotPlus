@@ -37,9 +37,20 @@ ScreenshotPlusManager *screenshotPlusManager;
 
 %end
 
+static void lockComplete(CFNotificationCenterRef center, void *observer, CFStringRef name, const void *object, CFDictionaryRef userInfo) {
+    
+    if ([screenshotPlusManager isRunning]) {
+        [screenshotPlusManager resign];
+    }
+    
+}
+
 %ctor {
     NSLog(@"Screenshot+: Starting up!");
     screenshotPlusManager = [[ScreenshotPlusManager alloc] init];
     screenshotPlusManager.isRunning = NO;
     [LASharedActivator registerListener:screenshotPlusManager forName:@"wales.tucker.ScreenshotPlus"];
+    
+    CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, lockComplete, CFSTR("com.apple.springboard.lockcomplete"), NULL, CFNotificationSuspensionBehaviorDeliverImmediately);
+    
 }

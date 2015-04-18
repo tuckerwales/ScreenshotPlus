@@ -11,15 +11,27 @@
 #import <Social/Social.h>
 #import <libactivator/libactivator.h>
 
-@interface ScreenshotPlusManager : NSObject <LAListener, MFMailComposeViewControllerDelegate> {
+@interface ScreenshotPlusManager : NSObject <LAListener, MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate> {
     UIWindow *window;
     UIWindow *composeWindow;
     UIImageView *screenshotView;
     NSMutableArray *buttons;
     
+    BOOL email;
+    BOOL mms;
+    BOOL twitter;
+    BOOL facebook;
+    
+    BOOL saveToPhotos;
+    
+    UIImage *screenshot;
+    
+    NSMutableArray *composers;
     UIViewController *composeVC;
-    SLComposeViewController *socialComposer;
+    SLComposeViewController *twitterComposer;
+    SLComposeViewController *facebookComposer;
     MFMailComposeViewController *mailComposeVC;
+    MFMessageComposeViewController *messageComposeVC;
     
 }
 

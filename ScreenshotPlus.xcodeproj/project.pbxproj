@@ -20,6 +20,7 @@
 		242B44191AE180C900774422 /* libactivator.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 242B44181AE180C900774422 /* libactivator.dylib */; };
 		242B441C1AE1816500774422 /* ScreenshotPlusManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 242B441A1AE1816500774422 /* ScreenshotPlusManager.h */; };
 		242B441D1AE1816500774422 /* ScreenshotPlusManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 242B441B1AE1816500774422 /* ScreenshotPlusManager.m */; };
+		2444436D1AE2EB59003D125E /* ScreenshotPlusIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2444436C1AE2EB59003D125E /* ScreenshotPlusIcon@3x.png */; };
 		2472997E1AE17FD0007F2BC1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2472997D1AE17FD0007F2BC1 /* Foundation.framework */; };
 		2472998F1AE17FD0007F2BC1 /* ScreenshotPlus.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2472998E1AE17FD0007F2BC1 /* ScreenshotPlus.mm */; };
 		247299991AE17FDE007F2BC1 /* libsubstrate.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 247299981AE17FDE007F2BC1 /* libsubstrate.dylib */; };
@@ -41,6 +42,8 @@
 		242B44181AE180C900774422 /* libactivator.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libactivator.dylib; path = ../../../../../opt/iOSOpenDev/lib/libactivator.dylib; sourceTree = "<group>"; };
 		242B441A1AE1816500774422 /* ScreenshotPlusManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenshotPlusManager.h; sourceTree = "<group>"; };
 		242B441B1AE1816500774422 /* ScreenshotPlusManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenshotPlusManager.m; sourceTree = "<group>"; };
+		2444436A1AE2C618003D125E /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		2444436C1AE2EB59003D125E /* ScreenshotPlusIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ScreenshotPlusIcon@3x.png"; path = "Package/Library/PreferenceLoader/Preferences/ScreenshotPlusIcon@3x.png"; sourceTree = "<group>"; };
 		2472997A1AE17FD0007F2BC1 /* ScreenshotPlus.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ScreenshotPlus.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		2472997D1AE17FD0007F2BC1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		247299821AE17FD0007F2BC1 /* control.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = control.txt; path = Package/DEBIAN/control.txt; sourceTree = "<group>"; };
@@ -122,6 +125,7 @@
 		2472997C1AE17FD0007F2BC1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2444436A1AE2C618003D125E /* Accounts.framework */,
 				2426C25E1AE29E7D00B48E58 /* Social.framework */,
 				2426C25C1AE1DCA200B48E58 /* MessageUI.framework */,
 				2426C24D1AE190B200B48E58 /* QuartzCore.framework */,
@@ -203,6 +207,7 @@
 				247299891AE17FD0007F2BC1 /* ScreenshotPlus.plist */,
 				2472998A1AE17FD0007F2BC1 /* ScreenshotPlusIcon.png */,
 				2472998B1AE17FD0007F2BC1 /* ScreenshotPlusIcon@2x.png */,
+				2444436C1AE2EB59003D125E /* ScreenshotPlusIcon@3x.png */,
 			);
 			name = Preferences;
 			sourceTree = "<group>";
@@ -294,6 +299,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2444436D1AE2EB59003D125E /* ScreenshotPlusIcon@3x.png in Resources */,
 				2426C25B1AE1A41E00B48E58 /* ScreenshotPlus.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
