@@ -3,6 +3,7 @@
 // See http://iphonedevwiki.net/index.php/Logos
 
 #import <libactivator/libactivator.h>
+#import <SpringBoard-Class.h>
 #import "ScreenshotPlusManager.h"
 
 ScreenshotPlusManager *screenshotPlusManager;
@@ -10,12 +11,13 @@ ScreenshotPlusManager *screenshotPlusManager;
 %hook SpringBoard
 
 -(void)_handleMenuButtonEvent {
-    
+        
     if ([screenshotPlusManager isRunning]) {
         [screenshotPlusManager resign];
+        [self clearMenuButtonTimer];
+    } else {
+        %orig;
     }
-    
-    %orig;
     
 }
 

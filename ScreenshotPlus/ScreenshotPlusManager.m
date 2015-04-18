@@ -28,12 +28,25 @@
     
     saveToPhotos = YES;
     
-    email = [[settings valueForKey:@"EmailSwitch"] boolValue];
-    mms = [[settings valueForKey:@"MMSSwitch"] boolValue];
-    twitter = [[settings valueForKey:@"TwitterSwitch"] boolValue];
-    facebook = [[settings valueForKey:@"FacebookSwitch"] boolValue];
+    if ([settings objectForKey:@"EmailSwitch"] != nil) {
+        email = [[settings valueForKey:@"EmailSwitch"] boolValue];
+    }
     
-    saveToPhotos = [[settings valueForKey:@"SaveScreenshot"] boolValue];
+    if ([settings objectForKey:@"MMSSwitch"] != nil) {
+        mms = [[settings valueForKey:@"MMSSwitch"] boolValue];
+    }
+    
+    if ([settings objectForKey:@"TwitterSwitch"] != nil) {
+        twitter = [[settings valueForKey:@"TwitterSwitch"] boolValue];
+    }
+    
+    if ([settings objectForKey:@"FacebookSwitch"] != nil) {
+        facebook = [[settings valueForKey:@"FacebookSwitch"] boolValue];
+    }
+    
+    if ([settings objectForKey:@"SaveScreenshot"] != nil) {
+        saveToPhotos = [[settings valueForKey:@"SaveScreenshot"] boolValue];
+    }
     
 }
 
