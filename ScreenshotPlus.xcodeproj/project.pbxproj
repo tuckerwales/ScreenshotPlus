@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2426C2441AE18D3900B48E58 /* IOSurface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2426C2431AE18D3900B48E58 /* IOSurface.framework */; };
+		2426C2461AE18F7E00B48E58 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2426C2451AE18F7E00B48E58 /* UIKit.framework */; };
+		2426C2481AE18F8200B48E58 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2426C2471AE18F8200B48E58 /* CoreGraphics.framework */; };
+		2426C24C1AE1906200B48E58 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2426C24B1AE1906200B48E58 /* IOKit.framework */; };
+		2426C24E1AE190B200B48E58 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2426C24D1AE190B200B48E58 /* QuartzCore.framework */; };
+		2426C2511AE190D900B48E58 /* Screenshotter.h in Headers */ = {isa = PBXBuildFile; fileRef = 2426C24F1AE190D900B48E58 /* Screenshotter.h */; };
+		2426C2521AE190D900B48E58 /* Screenshotter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2426C2501AE190D900B48E58 /* Screenshotter.m */; };
+		2426C25B1AE1A41E00B48E58 /* ScreenshotPlus.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2426C25A1AE1A41E00B48E58 /* ScreenshotPlus.bundle */; };
+		2426C25D1AE1DCA200B48E58 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2426C25C1AE1DCA200B48E58 /* MessageUI.framework */; };
+		2426C25F1AE29E7D00B48E58 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2426C25E1AE29E7D00B48E58 /* Social.framework */; };
 		242B44191AE180C900774422 /* libactivator.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 242B44181AE180C900774422 /* libactivator.dylib */; };
 		242B441C1AE1816500774422 /* ScreenshotPlusManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 242B441A1AE1816500774422 /* ScreenshotPlusManager.h */; };
 		242B441D1AE1816500774422 /* ScreenshotPlusManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 242B441B1AE1816500774422 /* ScreenshotPlusManager.m */; };
@@ -16,6 +26,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2426C2431AE18D3900B48E58 /* IOSurface.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOSurface.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/PrivateFrameworks/IOSurface.framework; sourceTree = DEVELOPER_DIR; };
+		2426C2451AE18F7E00B48E58 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2426C2471AE18F8200B48E58 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2426C2491AE1902300B48E58 /* CoreSurface.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreSurface.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/PrivateFrameworks/CoreSurface.framework; sourceTree = DEVELOPER_DIR; };
+		2426C24B1AE1906200B48E58 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/IOKit.framework; sourceTree = DEVELOPER_DIR; };
+		2426C24D1AE190B200B48E58 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		2426C24F1AE190D900B48E58 /* Screenshotter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Screenshotter.h; sourceTree = "<group>"; };
+		2426C2501AE190D900B48E58 /* Screenshotter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Screenshotter.m; sourceTree = "<group>"; };
+		2426C25A1AE1A41E00B48E58 /* ScreenshotPlus.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = ScreenshotPlus.bundle; path = Package/Library/MobileSubstrate/DynamicLibraries/ScreenshotPlus.bundle; sourceTree = "<group>"; };
+		2426C25C1AE1DCA200B48E58 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		2426C25E1AE29E7D00B48E58 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		242B44171AE180AA00774422 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		242B44181AE180C900774422 /* libactivator.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libactivator.dylib; path = ../../../../../opt/iOSOpenDev/lib/libactivator.dylib; sourceTree = "<group>"; };
 		242B441A1AE1816500774422 /* ScreenshotPlusManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenshotPlusManager.h; sourceTree = "<group>"; };
@@ -40,9 +61,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2426C25F1AE29E7D00B48E58 /* Social.framework in Frameworks */,
+				2426C25D1AE1DCA200B48E58 /* MessageUI.framework in Frameworks */,
+				2426C24E1AE190B200B48E58 /* QuartzCore.framework in Frameworks */,
+				2426C24C1AE1906200B48E58 /* IOKit.framework in Frameworks */,
+				2426C2481AE18F8200B48E58 /* CoreGraphics.framework in Frameworks */,
+				2426C2461AE18F7E00B48E58 /* UIKit.framework in Frameworks */,
+				2426C2441AE18D3900B48E58 /* IOSurface.framework in Frameworks */,
+				2472997E1AE17FD0007F2BC1 /* Foundation.framework in Frameworks */,
 				242B44191AE180C900774422 /* libactivator.dylib in Frameworks */,
 				247299991AE17FDE007F2BC1 /* libsubstrate.dylib in Frameworks */,
-				2472997E1AE17FD0007F2BC1 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +122,14 @@
 		2472997C1AE17FD0007F2BC1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2426C25E1AE29E7D00B48E58 /* Social.framework */,
+				2426C25C1AE1DCA200B48E58 /* MessageUI.framework */,
+				2426C24D1AE190B200B48E58 /* QuartzCore.framework */,
+				2426C24B1AE1906200B48E58 /* IOKit.framework */,
+				2426C2491AE1902300B48E58 /* CoreSurface.framework */,
+				2426C2471AE18F8200B48E58 /* CoreGraphics.framework */,
+				2426C2451AE18F7E00B48E58 /* UIKit.framework */,
+				2426C2431AE18D3900B48E58 /* IOSurface.framework */,
 				242B44181AE180C900774422 /* libactivator.dylib */,
 				247299981AE17FDE007F2BC1 /* libsubstrate.dylib */,
 				2472997D1AE17FD0007F2BC1 /* Foundation.framework */,
@@ -104,6 +140,8 @@
 		2472997F1AE17FD0007F2BC1 /* ScreenshotPlus */ = {
 			isa = PBXGroup;
 			children = (
+				2426C24F1AE190D900B48E58 /* Screenshotter.h */,
+				2426C2501AE190D900B48E58 /* Screenshotter.m */,
 				242B441A1AE1816500774422 /* ScreenshotPlusManager.h */,
 				242B441B1AE1816500774422 /* ScreenshotPlusManager.m */,
 				2472998D1AE17FD0007F2BC1 /* ScreenshotPlus.xm */,
@@ -180,6 +218,7 @@
 		247299911AE17FD0007F2BC1 /* DynamicLibraries */ = {
 			isa = PBXGroup;
 			children = (
+				2426C25A1AE1A41E00B48E58 /* ScreenshotPlus.bundle */,
 				247299921AE17FD0007F2BC1 /* ScreenshotPlus.plist */,
 			);
 			name = DynamicLibraries;
@@ -192,6 +231,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2426C2511AE190D900B48E58 /* Screenshotter.h in Headers */,
 				242B441C1AE1816500774422 /* ScreenshotPlusManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -206,6 +246,7 @@
 				247299741AE17FD0007F2BC1 /* ShellScript */,
 				247299751AE17FD0007F2BC1 /* Sources */,
 				247299761AE17FD0007F2BC1 /* Frameworks */,
+				2426C2531AE1A30900B48E58 /* Resources */,
 				247299771AE17FD0007F2BC1 /* Headers */,
 				247299781AE17FD0007F2BC1 /* ShellScript */,
 			);
@@ -248,6 +289,17 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		2426C2531AE1A30900B48E58 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2426C25B1AE1A41E00B48E58 /* ScreenshotPlus.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXShellScriptBuildPhase section */
 		247299741AE17FD0007F2BC1 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -282,6 +334,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2426C2521AE190D900B48E58 /* Screenshotter.m in Sources */,
 				2472998F1AE17FD0007F2BC1 /* ScreenshotPlus.mm in Sources */,
 				242B441D1AE1816500774422 /* ScreenshotPlusManager.m in Sources */,
 			);
@@ -293,6 +346,7 @@
 		247299931AE17FD0007F2BC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -311,7 +365,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(iOSOpenDevPath)/include/**";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = "$(iOSOpenDevPath)/lib/**";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -323,6 +377,7 @@
 		247299941AE17FD0007F2BC1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = YES;
 				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -334,7 +389,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(iOSOpenDevPath)/include/**";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = "$(iOSOpenDevPath)/lib/**";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -349,6 +404,11 @@
 				CODE_SIGN_IDENTITY = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_DIR)/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/PrivateFrameworks",
+					"$(DEVELOPER_DIR)/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ScreenshotPlus/ScreenshotPlus-Prefix.pch";
 				INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries;
@@ -357,9 +417,10 @@
 					/opt/iOSOpenDev/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				iOSOpenDevBuildPackageOnAnyBuild = NO;
 				iOSOpenDevCopyOnBuild = NO;
-				iOSOpenDevDevice = "";
+				iOSOpenDevDevice = 127.0.0.1;
 				iOSOpenDevInstallOnAnyBuild = NO;
 				iOSOpenDevInstallOnProfiling = YES;
 				iOSOpenDevRespringOnInstall = YES;
@@ -373,6 +434,11 @@
 				CODE_SIGN_IDENTITY = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_DIR)/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/PrivateFrameworks",
+					"$(DEVELOPER_DIR)/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ScreenshotPlus/ScreenshotPlus-Prefix.pch";
 				INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries;
@@ -381,9 +447,10 @@
 					/opt/iOSOpenDev/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				iOSOpenDevBuildPackageOnAnyBuild = NO;
 				iOSOpenDevCopyOnBuild = NO;
-				iOSOpenDevDevice = "";
+				iOSOpenDevDevice = 127.0.0.1;
 				iOSOpenDevInstallOnAnyBuild = NO;
 				iOSOpenDevInstallOnProfiling = YES;
 				iOSOpenDevRespringOnInstall = YES;

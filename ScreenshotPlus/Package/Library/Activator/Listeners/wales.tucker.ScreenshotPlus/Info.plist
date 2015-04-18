@@ -1,6 +1,9 @@
 {
-    group = "Screenshot+";
-    title = "Screenshot+ Activation";
-    description = "This activator action will invoke Screenshot+.";
-    "compatible-modes" = ("springboard", "lockscreen", "application");
+	group = "Screenshot+";
+	title = "Screenshot+";
+	description = "Take a screenshot and choose where to share it!";
+	"compatible-modes" = (
+		springboard,
+		application,
+	);
 }
